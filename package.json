@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon mock.js",
-    "dev": "cross-env NODE_ENV= nodemon mock.js"
+    "dev": "cross-env NODE_ENV=development nodemon mock.js"
   },
   "author": "Nicolas Ramirez <nicolas.ramirez.ka@gmail.com>",
   "license": "MIT",

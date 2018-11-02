@@ -25,7 +25,9 @@ module.exports = () => {
                 })
                 break;
             default:
-                config.uri = mongoDbUri
+                Object.defineProperty(config, 'uri', {
+                    value: mongoDbUri
+                })
                 break;
         }
     }

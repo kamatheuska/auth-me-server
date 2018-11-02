@@ -6,12 +6,9 @@ const {
     port
 } = require('./config')()
 
-
-
 module.exports = ({ mongoDbUri, jwtSecret } = {}) => () => {
     initializeApp(mongoDbUri)
     let uri = mongoDbUri || getDbUri()
-    console.log('---->>  logging...\n', port)
     return {
         response: uri
     }
