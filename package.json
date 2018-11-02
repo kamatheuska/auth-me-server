@@ -1,0 +1,19 @@
+{
+  "name": "auth-me-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production nodemon mock.js",
+    "dev": "cross-env NODE_ENV= nodemon mock.js"
+  },
+  "author": "Nicolas Ramirez <nicolas.ramirez.ka@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.8",
+    "mongoose": "^5.3.4"
+  }
+}
