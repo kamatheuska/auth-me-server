@@ -1,11 +1,13 @@
 const { AssertionError } = require('assert')
 
-const defineError = ({ message = 'An error has ocurred', name = 'NewError' }) => {
+const defineError = ({ message = '', name = 'NewError' }) => {
     let error = new Error (message)
-    error.name = name
+    error.name = error.name || name
     return error
 }
-
+const handleAppError = (error) => {
+    throw error
+}
 const handleAssertionError = (error, req, res, next) => {
     if (error instanceof AssertionError) {
         return res.status(400).json({
@@ -50,5 +52,6 @@ module.exports = {
     handleAuthenticationError,
     handleJwtError,
     handleUndefinedError,
-    defineError
+    defineError,
+    handleAppError
 }

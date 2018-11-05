@@ -1,16 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const {
-    initializeApp,
-    getDbUri,
-    port
-} = require('./config')()
+'use strict'
+
+const { initializeApp } = require('./config')
+const { handleAddUser } = require('./middleware/users')
 
 module.exports = ({ mongoDbUri, jwtSecret } = {}) => () => {
-    initializeApp(mongoDbUri)
-    let uri = mongoDbUri || getDbUri()
+    const config = initializeApp(mongoDbUri)
     return {
-        response: uri
+        config,
+        handleAddUser
     }
 }
 
